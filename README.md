@@ -1,1 +1,1 @@
-### This repository is for JNCE Clinic and its Clients
+### This repository is for JNCE Medical Clinic
