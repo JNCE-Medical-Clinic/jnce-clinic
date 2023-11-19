@@ -11,7 +11,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'jnce-green': '#34d399'
+                'jnce-green': '#5DB3A8'
             }
         }
     },

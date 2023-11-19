@@ -6,6 +6,7 @@ import Overview from '../../assets/svgs/overview.svg';
 import Clipboard from '../../assets/svgs/clipboard.svg';
 import Patients from '../../assets/svgs/patients.svg';
 import JnceLogo from '../../assets/images/jnce.png';
+import cn from 'classnames';
 
 interface NavItemProps {
     path: string;
@@ -17,7 +18,11 @@ interface NavItemProps {
 const NavItem: React.FC<NavItemProps> = ({ path, text, icon: Icon, isSidebarHovered }) => {
     return (
         <Link href={path}>
-            <div className="block py-2 px-4 hover:bg-jnce-green hover:text-gray-100 hover:font-semibold mt-4">
+            <div
+                className={cn(
+                    'block py-2 px-4 hover:bg-jnce-green hover:text-gray-100 hover:font-semibold mt-4'
+                )}
+            >
                 <div className="relative">
                     <Icon className="w-8 h-8" />
                     {isSidebarHovered && <span className="absolute top-0 ml-10 mt-1">{text}</span>}
@@ -38,9 +43,14 @@ const Sidebar: React.FC = () => {
         >
             <Image src={JnceLogo} alt="JNCE Logo" width={50} height={50} className="my-4 ml-2" />
             <NavItem path="/" text="Overview" icon={Overview} isSidebarHovered={isHovered} />
-            <NavItem path="/about" text="Patients" icon={Patients} isSidebarHovered={isHovered} />
             <NavItem
-                path="/contact"
+                path="/patients"
+                text="Patients"
+                icon={Patients}
+                isSidebarHovered={isHovered}
+            />
+            <NavItem
+                path="/appointments"
                 text="Appointments"
                 icon={Clipboard}
                 isSidebarHovered={isHovered}
